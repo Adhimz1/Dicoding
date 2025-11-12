@@ -20,9 +20,7 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Langkah 1: Atur Toolbar kustom Anda sebagai ActionBar aplikasi
         setSupportActionBar(binding.toolbarDetail)
-        // Aktifkan tombol panah kembali (Up Button)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val player = if (Build.VERSION.SDK_INT >= 33) {
@@ -33,38 +31,28 @@ class DetailActivity : AppCompatActivity() {
         }
 
         if (player != null) {
-            // Mengatur judul pada CollapsingToolbarLayout, bukan ActionBar
             binding.collapsingToolbar.title = player.name
 
-            // Memuat gambar ke ImageView di dalam CollapsingToolbarLayout
             Glide.with(this)
                 .load(player.photo)
                 .into(binding.imgPlayerPhoto)
 
-            // Mengisi konten di bawahnya
-            binding.tvPlayerName.text = player.name
+            // Baris kode untuk mengisi nama pemain sudah dihapus
             binding.tvPlayerDescription.text = player.description
 
-            // =============================================================
-            // LANGKAH 2: MENAMBAHKAN LOGIKA PADA TOMBOL SHARE (FAB)
-            // =============================================================
             binding.fabShare.setOnClickListener {
-                // Membuat teks yang akan dibagikan
+                // Mengubah teks share ke Bahasa Indonesia
                 val shareText = "Lihat profil pemain Chelsea: ${player.name}\n\n${player.overview}"
 
-                // Membuat Intent untuk aksi 'SEND'
                 val shareIntent = Intent(Intent.ACTION_SEND)
-                shareIntent.type = "text/plain" // Tipe konten adalah teks biasa
+                shareIntent.type = "text/plain"
                 shareIntent.putExtra(Intent.EXTRA_TEXT, shareText)
 
-                // Memulai activity chooser untuk menampilkan pilihan aplikasi
                 startActivity(Intent.createChooser(shareIntent, "Bagikan via"))
             }
-            // =============================================================
         }
     }
 
-    // Fungsi ini dibutuhkan agar tombol panah kembali berfungsi dengan benar
     override fun onSupportNavigateUp(): Boolean {
         onBackPressedDispatcher.onBackPressed()
         return true

@@ -14,30 +14,31 @@ object PlayersData {
         "Jamie Gittens"
     )
 
+    // --- PERUBAHAN DI SINI ---
     private val playerOverviews = arrayOf(
-        "Midfielder - Argentina",
-        "Right-Back - England",
-        "Midfielder - England",
-        "Winger - Brazil",
-        "Centre-Back - France",
-        "Winger - Portugal",
-        "Defensive Midfielder - Ecuador",
-        "Centre-Back - France",
-        "Forward - Brazil",
-        "Winger - England"
+        "Seorang gelandang tengah Argentina, juara dunia yang dikenal dengan jangkauan umpannya...",
+        "Seorang bek kanan Inggris dan kapten Chelsea, dikenal dengan kemampuan crossing-nya...",
+        "Seorang gelandang serang atau pemain sayap dari Inggris, pemain kreatif dengan insting mencetak gol...",
+        "Seorang pemain sayap bertalenta tinggi dari Brazil, dikenal karena skill, kelincahan, dan kreativitasnya...",
+        "Seorang bek tengah dari Perancis yang dikenal dengan kecepatan, kekuatan, dan posisi bertahannya...",
+        "Seorang pemain sayap dari Portugal, dikenal karena akselerasi, dribbling, dan kemampuannya menciptakan peluang...",
+        "Seorang gelandang bertahan dari Ekuador. Gelandang tangguh dengan tekel dan intersep yang hebat...",
+        "Seorang bek tengah dari Perancis. Bek jangkung dan tenang yang pandai menguasai bola...",
+        "Seorang penyerang dari Brazil. Penyerang dinamis dengan pergerakan, teknik, dan penyelesaian akhir yang hebat...",
+        "Seorang pemain sayap dari Inggris. Pemain muda menarik yang dikenal dengan kecepatan dan kreativitasnya..."
     )
 
     private val playerDescriptions = arrayOf(
-        "Enzo Jeremías Fernández is an Argentine professional footballer who plays as a central midfielder for Premier League club Chelsea and the Argentina national team. A World Cup winner known for his passing range and work rate.",
-        "Reece James is an English professional footballer who plays as a right-back for Premier League club Chelsea, for which he is captain, and the England national team. He is known for his excellent crossing ability and physical strength.",
-        "Cole Jermaine Palmer is an English professional footballer who plays as an attacking midfielder or winger for Premier League club Chelsea and the England national team. He is a creative player with a keen eye for goal.",
-        "Estevão Willian Almeida de Oliveira Gonçalves is a Brazilian professional footballer who plays as a winger for Premier League club Chelsea and the Brazil national team. He is a highly skilled young talent known for his flair, agility, and creativity on the ball.",
-        "Wesley Tidjan Fofana is a French professional footballer who plays as a centre-back for Premier League club Chelsea and the France national team. He is known for his pace, strength, and excellent defensive positioning.",
-        "Pedro Lomba Neto is a Portuguese professional footballer who plays as a winger for Premier League club Chelsea and the Portugal national team. He is known for his quick acceleration, dribbling, and ability to create scoring chances.",
-        "Moisés Isaac Caicedo Corozo is an Ecuadorian professional footballer who plays as a defensive midfielder for Premier League club Chelsea and the Ecuador national team. He is a robust midfielder with great tackling and interception skills.",
-        "Benoît Ntambue Badiashile Mukinayi is a French professional footballer who plays as a centre-back for Premier League club Chelsea and the France national team. A tall and composed defender, good with the ball at his feet.",
-        "João Pedro Junqueira de Jesus is a Brazilian professional footballer who plays as a forward for Premier League club Chelsea and the Brazil national team. He is a dynamic attacker with great movement, technique, and finishing ability.",
-        "Jamie Jermaine Bynoe-Gittens is an English professional footballer who plays as a winger for Premier League club Chelsea and the England national team. He is an exciting young player known for his pace, creativity, and one-on-one dribbling skills."
+        "Seorang gelandang tengah Argentina, juara dunia yang dikenal dengan jangkauan umpannya...",
+        "Seorang bek kanan Inggris dan kapten Chelsea, dikenal dengan kemampuan crossing-nya...",
+        "Seorang gelandang serang atau pemain sayap dari Inggris, pemain kreatif dengan insting mencetak gol...",
+        "Seorang pemain sayap bertalenta tinggi dari Brazil, dikenal karena skill, kelincahan, dan kreativitasnya...",
+        "Seorang bek tengah dari Perancis yang dikenal dengan kecepatan, kekuatan, dan posisi bertahannya...",
+        "Seorang pemain sayap dari Portugal, dikenal karena akselerasi, dribbling, dan kemampuannya menciptakan peluang...",
+        "Seorang gelandang bertahan dari Ekuador. Gelandang tangguh dengan tekel dan intersep yang hebat...",
+        "Seorang bek tengah dari Perancis. Bek jangkung dan tenang yang pandai menguasai bola...",
+        "Seorang penyerang dari Brazil. Penyerang dinamis dengan pergerakan, teknik, dan penyelesaian akhir yang hebat...",
+        "Seorang pemain sayap dari Inggris. Pemain muda menarik yang dikenal dengan kecepatan dan kreativitasnya..."
     )
 
     private val playerPhotos = intArrayOf(

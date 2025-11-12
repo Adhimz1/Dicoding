@@ -46,21 +46,22 @@
             android:orientation="vertical"
             android:padding="16dp">
 
+            <!-- TextView untuk nama pemain sudah dihapus dari sini -->
+
             <TextView
-                android:id="@+id/tv_player_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                tools:text="Player Name" />
+                android:text="Sinopsis"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_player_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                tools:text="Player Description" />
+                tools:text="Deskripsi lengkap pemain akan muncul di sini." />
 
         </LinearLayout>
 
