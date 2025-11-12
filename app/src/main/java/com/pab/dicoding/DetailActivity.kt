@@ -1,20 +1,42 @@
 package com.pab.dicoding
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.bumptech.glide.Glide
 
 class DetailActivity : AppCompatActivity() {
+
+    companion object {
+        const val EXTRA_PLAYER = "extra_player"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_detail)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        val player = intent.getParcelableExtra<Player>(EXTRA_PLAYER)
+
+        if (player != null) {
+            val imgPlayerPhoto: ImageView = findViewById(R.id.img_player_photo)
+            val tvPlayerName: TextView = findViewById(R.id.tv_player_name)
+            val tvPlayerDescription: TextView = findViewById(R.id.tv_player_description)
+
+            Glide.with(this)
+                .load(player.photo)
+                .into(imgPlayerPhoto)
+
+            tvPlayerName.text = player.name
+            tvPlayerDescription.text = player.description
+            supportActionBar?.title = player.name
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
     }
 }
