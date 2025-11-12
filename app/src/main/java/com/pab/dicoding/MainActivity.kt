@@ -1,59 +1,56 @@
 package com.pab.dicoding
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.pab.dicoding.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var rvPlayers: RecyclerView
+    private lateinit var binding: ActivityMainBinding
     private val list = ArrayList<Player>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        // Memberikan judul pada ActionBar default dari tema
+        supportActionBar?.title = "Pemain Chelsea"
 
-        rvPlayers = findViewById(R.id.rv_players)
-        rvPlayers.setHasFixedSize(true)
-
+        binding.rvPlayers.setHasFixedSize(true)
         list.addAll(PlayersData.listData)
         showRecyclerList()
     }
 
     private fun showRecyclerList() {
-        rvPlayers.layoutManager = LinearLayoutManager(this)
+        binding.rvPlayers.layoutManager = LinearLayoutManager(this)
         val listPlayerAdapter = ListPlayerAdapter(list)
-        rvPlayers.adapter = listPlayerAdapter
+        binding.rvPlayers.adapter = listPlayerAdapter
 
         listPlayerAdapter.setOnItemClickCallback(object : ListPlayerAdapter.OnItemClickCallback {
             override fun onItemClicked(data: Player) {
-                val intent = Intent(this@MainActivity, DetailActivity::class.java)
-                intent.putExtra(DetailActivity.EXTRA_PLAYER, data)
-                startActivity(intent)
+                val intentToDetail = Intent(this@MainActivity, DetailActivity::class.java)
+                intentToDetail.putExtra(DetailActivity.EXTRA_PLAYER, data)
+                startActivity(intentToDetail)
             }
         })
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
-        return true
+        return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.about_page -> {
-                startActivity(Intent(this, AboutActivity::class.java))
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
+        if (item.itemId == R.id.about_page) {
+            val intentToAbout = Intent(this@MainActivity, AboutActivity::class.java)
+            startActivity(intentToAbout)
+            return true
         }
+        return super.onOptionsItemSelected(item)
     }
 }

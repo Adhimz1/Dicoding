@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Dicoding" parent="Theme.Material3.DayNight">
-        <!-- Tidak boleh ada .NoActionBar di sini -->
+    <style name="Base.Theme.Dicoding" parent="Theme.Material3.DayNight"> <!-- BENAR: Tanpa .DarkActionBar -->
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
 </resources>

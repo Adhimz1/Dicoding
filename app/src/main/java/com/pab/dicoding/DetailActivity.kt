@@ -1,15 +1,15 @@
 package com.pab.dicoding
 
 import android.content.Intent
-import android.os.Bundle
-import android.widget.ImageView
-import android.widget.TextView
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
+import android.os.Bundle
 import com.bumptech.glide.Glide
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.pab.dicoding.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityDetailBinding
 
     companion object {
         const val EXTRA_PLAYER = "extra_player"
@@ -17,39 +17,54 @@ class DetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail)
+        binding = ActivityDetailBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val toolbar: Toolbar = findViewById(R.id.toolbar_detail)
-        setSupportActionBar(toolbar)
+        // Langkah 1: Atur Toolbar kustom Anda sebagai ActionBar aplikasi
+        setSupportActionBar(binding.toolbarDetail)
+        // Aktifkan tombol panah kembali (Up Button)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val player = intent.getParcelableExtra<Player>(EXTRA_PLAYER)
+        val player = if (Build.VERSION.SDK_INT >= 33) {
+            intent.getParcelableExtra(EXTRA_PLAYER, Player::class.java)
+        } else {
+            @Suppress("DEPRECATION")
+            intent.getParcelableExtra(EXTRA_PLAYER)
+        }
 
         if (player != null) {
-            val imgPlayerPhoto: ImageView = findViewById(R.id.img_player_photo)
-            val tvPlayerName: TextView = findViewById(R.id.tv_player_name)
-            val tvPlayerDescription: TextView = findViewById(R.id.tv_player_description)
+            // Mengatur judul pada CollapsingToolbarLayout, bukan ActionBar
+            binding.collapsingToolbar.title = player.name
 
+            // Memuat gambar ke ImageView di dalam CollapsingToolbarLayout
             Glide.with(this)
                 .load(player.photo)
-                .into(imgPlayerPhoto)
+                .into(binding.imgPlayerPhoto)
 
-            tvPlayerName.text = player.name
-            tvPlayerDescription.text = player.description
-            supportActionBar?.title = player.name
+            // Mengisi konten di bawahnya
+            binding.tvPlayerName.text = player.name
+            binding.tvPlayerDescription.text = player.description
 
-            val fabShare: FloatingActionButton = findViewById(R.id.fab_share)
-            fabShare.setOnClickListener {
-                val shareIntent = Intent().apply {
-                    action = Intent.ACTION_SEND
-                    putExtra(Intent.EXTRA_TEXT, "Check out this player: ${player.name}\n\n${player.description}")
-                    type = "text/plain"
-                }
-                startActivity(Intent.createChooser(shareIntent, "Share via"))
+            // =============================================================
+            // LANGKAH 2: MENAMBAHKAN LOGIKA PADA TOMBOL SHARE (FAB)
+            // =============================================================
+            binding.fabShare.setOnClickListener {
+                // Membuat teks yang akan dibagikan
+                val shareText = "Lihat profil pemain Chelsea: ${player.name}\n\n${player.overview}"
+
+                // Membuat Intent untuk aksi 'SEND'
+                val shareIntent = Intent(Intent.ACTION_SEND)
+                shareIntent.type = "text/plain" // Tipe konten adalah teks biasa
+                shareIntent.putExtra(Intent.EXTRA_TEXT, shareText)
+
+                // Memulai activity chooser untuk menampilkan pilihan aplikasi
+                startActivity(Intent.createChooser(shareIntent, "Bagikan via"))
             }
+            // =============================================================
         }
     }
 
+    // Fungsi ini dibutuhkan agar tombol panah kembali berfungsi dengan benar
     override fun onSupportNavigateUp(): Boolean {
         onBackPressedDispatcher.onBackPressed()
         return true

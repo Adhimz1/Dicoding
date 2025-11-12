@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dicoding"
         tools:targetApi="31">
+
+        <!-- Splash Screen menjadi Activity utama yang diluncurkan -->
         <activity
             android:name=".SplashActivity"
             android:exported="true"
@@ -23,17 +23,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- MainActivity sekarang hanya bisa diakses dari dalam aplikasi -->
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
+        <!-- Detail Activity dengan tema NoActionBar dan navigasi kembali -->
         <activity
             android:name=".DetailActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.Dicoding.NoActionBar" />
+
+        <!-- About Activity dengan navigasi kembali ke MainActivity -->
         <activity
             android:name=".AboutActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
+
     </application>
 
 </manifest>
