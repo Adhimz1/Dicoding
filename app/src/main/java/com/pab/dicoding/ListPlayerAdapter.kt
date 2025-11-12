@@ -25,7 +25,7 @@ class ListPlayerAdapter(private val listPlayer: ArrayList<Player>) : RecyclerVie
             .load(player.photo)
             .into(holder.binding.imgItemPhoto)
         holder.binding.tvItemName.text = player.name
-        holder.binding.tvItemOverview.text = player.overview
+        holder.binding.tvItemDescription.text = player.overview
 
         holder.itemView.setOnClickListener {
             onItemClickCallback.onItemClicked(listPlayer[holder.adapterPosition])

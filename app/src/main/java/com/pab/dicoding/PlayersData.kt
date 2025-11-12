@@ -17,8 +17,8 @@ object PlayersData {
     private val playerOverviews = arrayOf(
         "Midfielder - Argentina",
         "Right-Back - England",
-        "Winger - Brazil",
         "Midfielder - England",
+        "Winger - Brazil",
         "Centre-Back - France",
         "Winger - Portugal",
         "Defensive Midfielder - Ecuador",
