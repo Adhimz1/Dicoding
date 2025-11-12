@@ -25,10 +25,16 @@ class ListPlayerAdapter(private val listPlayer: ArrayList<Player>) : RecyclerVie
             .load(player.photo)
             .into(holder.binding.imgItemPhoto)
         holder.binding.tvItemName.text = player.name
-        holder.binding.tvItemDescription.text = player.overview
+        holder.binding.tvItemOverview.text = player.overview
 
+        // --- PERBAIKAN UTAMA ADA DI SINI ---
         holder.itemView.setOnClickListener {
-            onItemClickCallback.onItemClicked(listPlayer[holder.adapterPosition])
+            // Gunakan bindingAdapterPosition yang lebih aman
+            val currentPosition = holder.bindingAdapterPosition
+            // Tambahkan pengecekan untuk memastikan posisi masih valid
+            if (currentPosition != RecyclerView.NO_POSITION) {
+                onItemClickCallback.onItemClicked(listPlayer[currentPosition])
+            }
         }
     }
 

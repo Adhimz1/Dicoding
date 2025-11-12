@@ -23,7 +23,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                app:layout_collapseMode="parallax" />
+                app:layout_collapseMode="parallax"
+                android:contentDescription="@string/player_photo" /> <!-- PERBAIKAN 1 -->
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar_detail"
@@ -46,15 +47,13 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- TextView untuk nama pemain sudah dihapus dari sini -->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="Sinopsis"
+                android:text="@string/synopsis"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold" /> <!-- PERBAIKAN 2 -->
 
             <TextView
                 android:id="@+id/tv_player_description"
@@ -74,6 +73,7 @@
         android:layout_margin="16dp"
         android:src="@drawable/ic_share"
         app:layout_anchor="@+id/collapsing_toolbar"
-        app:layout_anchorGravity="bottom|end" />
+        app:layout_anchorGravity="bottom|end"
+        android:contentDescription="@string/share_button" /> <!-- PERBAIKAN 3 -->
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

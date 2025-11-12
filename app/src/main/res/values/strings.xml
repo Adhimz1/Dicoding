@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Dicoding</string>
-    <string name="about">About</string>
+
+    <!-- ADD THE THREE LINES BELOW -->
+    <string name="player_photo">Player Photo</string>
+    <string name="synopsis">Synopsis</string>
+    <string name="share_button">Share Button</string>
 </resources>
