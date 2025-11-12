@@ -1,21 +1,19 @@
 package com.pab.dicoding
 
 object PlayersData {
-    // Array Nama (Urutan #1)
     private val playerNames = arrayOf(
-        "Enzo Fernández",       // 1
-        "Reece James",          // 2
-        "Cole Palmer",          // 3
-        "Estevao Willian",      // 4
-        "Wesley Fofana",        // 5
-        "Pedro Neto",           // 6
-        "Moisés Caicedo",       // 7
-        "Benoît Badiashile",    // 8
-        "Joao Pedro",           // 9
-        "Jamie Gittens"         // 10
+        "Enzo Fernández",
+        "Reece James",
+        "Cole Palmer",
+        "Estevao Willian",
+        "Wesley Fofana",
+        "Pedro Neto",
+        "Moisés Caicedo",
+        "Benoît Badiashile",
+        "Joao Pedro",
+        "Jamie Gittens"
     )
 
-    // Array Sinopsis (Urutan #2 - harus sama dengan #1)
     private val playerOverviews = arrayOf(
         "Seorang gelandang tengah Argentina, juara dunia yang dikenal dengan jangkauan umpannya...",
         "Seorang bek kanan Inggris dan kapten Chelsea, dikenal dengan kemampuan crossing-nya...",
@@ -29,7 +27,6 @@ object PlayersData {
         "Seorang pemain sayap dari Inggris. Pemain muda menarik yang dikenal dengan kecepatan dan kreativitasnya..."
     )
 
-    // Array Deskripsi Panjang (Urutan #3 - harus sama dengan #1)
     private val playerDescriptions = arrayOf(
         "Enzo Jeremías Fernández adalah seorang pemain sepak bola profesional Argentina yang bermain sebagai gelandang tengah untuk klub Liga Utama Inggris Chelsea dan tim nasional Argentina. Ia dikenal karena jangkauan umpan, visi bermain, dan tingkat kerjanya yang tinggi di lapangan.",
         "Reece James adalah seorang pemain sepak bola profesional Inggris yang bermain sebagai bek kanan untuk klub Liga Utama Inggris Chelsea, di mana ia menjadi kapten, dan tim nasional Inggris. Ia dikenal luas karena kekuatan fisiknya, kemampuan crossing yang luar biasa, dan kontribusi defensif yang solid.",
@@ -43,18 +40,18 @@ object PlayersData {
         "Jamie Jermaine Bynoe-Gittens adalah seorang pemain sepak bola profesional Inggris yang bermain sebagai pemain sayap untuk klub Bundesliga Borussia Dortmund. Ia adalah pemain muda yang sangat menarik, dikenal karena kecepatan, kreativitas, dan kemampuan dribbling satu lawan satu."
     )
 
-    // Array Foto (Urutan #4 - harus sama dengan #1)
+    // --- KODE DENGAN URUTAN YANG SUDAH DIPERBAIKI TOTAL ---
     private val playerPhotos = intArrayOf(
-        R.drawable.enzo_fernandez,      // 1. Cocok dengan Enzo Fernández
-        R.drawable.reece_james,         // 2. Cocok dengan Reece James
-        R.drawable.cole_palmer,         // 3. Cocok dengan Cole Palmer
-        R.drawable.estevao_willian,     // 4. Cocok dengan Estevao Willian
-        R.drawable.wesley_fofana,       // 5. Cocok dengan Wesley Fofana
-        R.drawable.pedro_neto,          // 6. Cocok dengan Pedro Neto
-        R.drawable.moises_caicedo,      // 7. Cocok dengan Moisés Caicedo
-        R.drawable.benoit_badiashile,   // 8. Cocok dengan Benoît Badiashile
-        R.drawable.joao_pedro,          // 9. Cocok dengan Joao Pedro
-        R.drawable.jamie_gittens        // 10. Cocok dengan Jamie Gittens
+        R.drawable.enzo_fernandez,
+        R.drawable.reece_james,
+        R.drawable.cole_palmer, // <- Diperbaiki
+        R.drawable.estevao_willian,
+        R.drawable.wesley_fofana,
+        R.drawable.pedro_neto,
+        R.drawable.moises_caicedo,
+        R.drawable.benoit_badiashile,
+        R.drawable.joao_pedro,
+        R.drawable.jamie_gittens  // <- Diperbaiki
     )
 
     val listData: ArrayList<Player>

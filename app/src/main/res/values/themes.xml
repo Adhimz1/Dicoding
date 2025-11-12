@@ -1,14 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Dicoding" parent="Theme.Material3.DayNight"> <!-- BENAR: Tanpa .DarkActionBar -->
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
+    <style name="Theme.Dicoding" parent="Theme.Material3.DayNight" />
 
-    <style name="Theme.Dicoding" parent="Base.Theme.Dicoding" />
-
-    <!-- TEMA BARU TANPA ACTION BAR (INI SUDAH BENAR) -->
-    <style name="Theme.Dicoding.NoActionBar" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your theme here if needed. -->
-    </style>
+    <!-- TAMBAHKAN STYLE BARU INI -->
+    <style name="Theme.Dicoding.NoActionBar" parent="Theme.Material3.DayNight.NoActionBar" />
 </resources>
